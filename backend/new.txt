@@ -1,0 +1,27 @@
+db.collection("Programs").findOne({
+      programCode: req.params.programCode,
+    });
+
+db.collection("Programs").findByIdAndDelete(getProgramId._id);
+
+db.collection("Programs").findByIdAndUpdate(
+      getProgramId._id,
+      {
+        ...req.body,
+      },
+      { new: true }
+    );
+
+db.collection("Subjects").findOne({
+      subjectCode: req.params.subjectCode,
+    });
+
+db.collection("Subjects").findByIdAndUpdate(
+      getSubject._id,
+      {
+        ...req.body,
+      },
+      { new: true }
+    );
+
+db.collection("Subjects").findByIdAndDelete(getSubject._id);
